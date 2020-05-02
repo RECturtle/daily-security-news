@@ -21,14 +21,13 @@ def getMicrosoft(url):
     # Loop through links on page and add to sources_today if posted 
     # on the current date and not in list
     for link in webpage.xpath("//a"):
-        if ('today' in str(link.get("href"))) \
+        if (today in str(link.get("href"))) \
         and (str(link.get("href")) not in sources_today):
             sources_today.append(str(link.get("href")))
 
     # If at least one link was pulled, print to a file with current date
     # * Replace f"{path}/..." with your preferred directory and naming 
     # TODO add functionality to post to website as a blog daily
-
     if len(sources_today) != 0:
         with open(f"{path}/{file_date}_sources.txt", "w") as f:
             for x in sources_today:
