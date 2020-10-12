@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 from urllib.request import Request, urlopen
 from datetime import date
 from lxml import html
